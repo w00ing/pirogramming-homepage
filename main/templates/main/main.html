@@ -1,29 +1,33 @@
-{% extends 'layout.html' %} {% load static %}{% block custom_style %}
-<link rel="stylesheet" href="{% static 'css/main.css' %}" />{% endblock %}
+{% extends 'layout.html' %} {% load static %}{% block custom_style %} <link rel="stylesheet" href="{% static 'css/main.css' %}" />{% endblock %}
 <!--  -->
 {% block subtitle %}
 <div class="banner_subtitle">비전공자를 위한 웹 프로그래밍 동아리</div>
-{% endblock subtitle %} {% block titlename %}PIROGRAMMNG{% endblock titlename %}
-{% block contents %}
-
-{% if messages %}
-  {% for message in messages %}
-    {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
-  {% endfor %}
-{% endif %}
+{% endblock subtitle %} {% block titlename %}PIROGRAMMNG{% endblock titlename %} {% block contents %} {% if messages %} {% for message in messages %} {% if message.tags %}
+<script>
+  alert("{{ message }}");
+</script>
+{% endif %} {% endfor %} {% endif %}
 <div class="black_background"><span>메인 배너용 추가 검정배경</span></div>
+<div style="display: flex; justify-content: center; align-items: center; margin: 5rem 0 5rem 0">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
+    <img src="https://pirogramming-bucket.s3.ap-northeast-2.amazonaws.com/recruiting/poster-15.png" style="max-width: 100%" alt="" />
+    <h1 style="margin: 5rem 0 2rem 0; font-size: 2rem">15기 모집 중!</h1>
+    <a style="text-decoration: none; font-size: 2rem" href="https://forms.gle/H3efJ6SrZRRYmvxu9">지원하기</a>
+  </div>
+</div>
+<div style="height: 71px; background-color: #151515"></div>
 <div class="main_intro">
   <div class="main_container">
     <div class="intro_wrap">
-      <div class="banner_title"> ALL ABOUT </div>
+      <div class="banner_title">ALL ABOUT</div>
       <div class="intro_content_wrap">
         <div class="intro_content_1">
-          피로그래밍은 프로그래밍 공부를 하고 싶으나 어디서부터 시작해야 할 지 막막한 비전공자들이 <br>
-          <span class="keyword">Python</span>과 <span class="keyword">Django</span> 프레임워크를 기반으로 웹 개발을 배우고 <br>
-          자신만의 웹 서비스를 만들어내는 동아리입니다. 
+          피로그래밍은 프로그래밍 공부를 하고 싶으나 어디서부터 시작해야 할 지 막막한 비전공자들이 <br />
+          <span class="keyword">Python</span>과 <span class="keyword">Django</span> 프레임워크를 기반으로 웹 개발을 배우고 <br />
+          자신만의 웹 서비스를 만들어내는 동아리입니다.
         </div>
         <div class="intro_content_2">
-          비전공자를 기준으로 기초부터 쉽게 차근차근 공부하며 방학동안 집중적으로 코딩에 전념하여 <br>
+          비전공자를 기준으로 기초부터 쉽게 차근차근 공부하며 방학동안 집중적으로 코딩에 전념하여 <br />
           웹 프로그래밍의 기반을 확보하는 것을 목표로 합니다.
         </div>
       </div>
@@ -36,36 +40,47 @@
       <div class="desc_item">
         {% if desc_img.first_img == 'static/images/desc_1.png' %}
         <div class="default_wrap">
-          <img src="{% static 'images/desc_1.png' %}" class="desc_img_default" alt="">
+          <img src="{% static 'images/desc_1.png' %}" class="desc_img_default" alt="" />
         </div>
         {% else %}
-          <img src="{{ desc_img.first_img.url }}" class="desc_img" alt="">
+        <img src="{{ desc_img.first_img.url }}" class="desc_img" alt="" />
         {% endif %}
-        <p class="desc_title"> 전공에 상관없이 <br/> 누구나 도전 가능 </p>
-        <p class="desc_content"> 전공이나 프로그래밍 경험 여부에 상관없이 열정만 갖고 있다면 누구나 피로그래머가 될 수 있습니다. </p>
+        <p class="desc_title">
+          전공에 상관없이 <br />
+          누구나 도전 가능
+        </p>
+        <p class="desc_content">전공이나 프로그래밍 경험 여부에 상관없이 열정만 갖고 있다면 누구나 피로그래머가 될 수 있습니다.</p>
       </div>
       <div class="desc_item">
         {% if desc_img.second_img == 'static/images/desc_2.png' %}
-          <div class="default_wrap">
-            <img src="{% static 'images/desc_2.png' %}" class="desc_img_default" alt="">
+        <div class="default_wrap">
+          <img src="{% static 'images/desc_2.png' %}" class="desc_img_default" alt="" />
         </div>
         {% else %}
-          <img src="{{ desc_img.second_img.url }}" class="desc_img" alt="">
+        <img src="{{ desc_img.second_img.url }}" class="desc_img" alt="" />
         {% endif %}
-        <p class="desc_title"> 개념부터 프로젝트까지 <br/> 누구보다 알찬 방학 </p>
-        <p class="desc_content"> 매주 3회 진행되는 세션과 과제로 한 달 동안 웹 프로그래밍 서비스 출시에 필요한 기초 개념부터 심화 개념까지 학습합니다.
-                                열정 넘치고 성장하고 싶은 사람들과 남은 한 달 동안 학습한 개념을 바탕으로 웹 프로젝트를 진행합니다. </p>
+        <p class="desc_title">
+          개념부터 프로젝트까지 <br />
+          누구보다 알찬 방학
+        </p>
+        <p class="desc_content">
+          매주 3회 진행되는 세션과 과제로 한 달 동안 웹 프로그래밍 서비스 출시에 필요한 기초 개념부터 심화 개념까지 학습합니다. 열정 넘치고 성장하고 싶은 사람들과 남은 한 달 동안 학습한 개념을
+          바탕으로 웹 프로젝트를 진행합니다.
+        </p>
       </div>
       <div class="desc_item">
         {% if desc_img.third_img == 'static/images/desc_3.png' %}
-          <div class="default_wrap">
-            <img src="{% static 'images/desc_3.png' %}" class="desc_img_default" alt="">
+        <div class="default_wrap">
+          <img src="{% static 'images/desc_3.png' %}" class="desc_img_default" alt="" />
         </div>
         {% else %}
-          <img src="{{ desc_img.third_img.url }}" class="desc_img" alt="">
+        <img src="{{ desc_img.third_img.url }}" class="desc_img" alt="" />
         {% endif %}
-        <p class="desc_title"> 프로그래머들과의 <br/> 활발한 교류 </p>
-        <p class="desc_content"> 2014년부터 시작된 피로그래밍 구성원들과 각종 행사 및 커뮤니티를 통해 개발 공부 중 궁금한 점부터 현직자들의 유용한 커리어 조언까지 자유롭게 소통할 수 있습니다. </p>
+        <p class="desc_title">
+          프로그래머들과의 <br />
+          활발한 교류
+        </p>
+        <p class="desc_content">2014년부터 시작된 피로그래밍 구성원들과 각종 행사 및 커뮤니티를 통해 개발 공부 중 궁금한 점부터 현직자들의 유용한 커리어 조언까지 자유롭게 소통할 수 있습니다.</p>
       </div>
     </div>
   </div>
@@ -73,7 +88,7 @@
 <div class="main_plan">
   <div class="main_container">
     <div class="plan_wrap">
-      <div class="banner_title"> PLAN </div>
+      <div class="banner_title">PLAN</div>
       <div class="plan_content">
         <div class="progress">
           <div class="progress_bar"></div>
@@ -82,27 +97,27 @@
             <div class="plan_point"></div>
             <div class="plan_point"></div>
           </div>
-          </div>
-          <div class="steps">
-            <div class="step_wrap">
-              <div class="step_content">
-                  <p class="step_title"> 신입 기수 모집 </p>
-                  <p class="step_month"> 6월 / 12월 </p>
-              </div>
-            </div>
-            <div class="step_wrap">
-              <div class="step_content">
-                <p class="step_title"> 세션 및 교육 </p>
-                <p class="step_month"> 7월 / 1월 </p>
-              </div>
-            </div>
-            <div class="step_wrap">
-              <div class="step_content">
-                <p class="step_title"> 프로젝트 진행 및 최종 발표 </p>
-                <p class="step_month"> 8월 / 2월 </p>
-              </div>
+        </div>
+        <div class="steps">
+          <div class="step_wrap">
+            <div class="step_content">
+              <p class="step_title">신입 기수 모집</p>
+              <p class="step_month">6월 / 12월</p>
             </div>
           </div>
+          <div class="step_wrap">
+            <div class="step_content">
+              <p class="step_title">세션 및 교육</p>
+              <p class="step_month">7월 / 1월</p>
+            </div>
+          </div>
+          <div class="step_wrap">
+            <div class="step_content">
+              <p class="step_title">프로젝트 진행 및 최종 발표</p>
+              <p class="step_month">8월 / 2월</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -110,9 +125,9 @@
 <div class="main_repo">
   <div class="main_container">
     <div class="repo_wrap">
-      <div class="banner_title"> REPOSITORY </div>
+      <div class="banner_title">REPOSITORY</div>
       <div class="repo_content">
-        <a href="https://github.com/pirogramming"><img src="{% static 'images/github.svg' %}" alt="" class="repo_image"></a>
+        <a href="https://github.com/pirogramming"><img src="{% static 'images/github.svg' %}" alt="" class="repo_image" /></a>
       </div>
     </div>
   </div>
@@ -124,92 +139,22 @@
       <div class="company_images">
         <div class="ui grid">
           <div class="four column row">
-            <a
-              href="https://snowcorp.com/ko_KR/"
-              class="column company_imagewrap"
-              ><img
-                src="{% static 'images/snow.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a href="https://qanda.ai/ko" class="column company_imagewrap"
-              ><img
-                src="{% static 'images/qanda.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a href="https://ziptoss.com/" class="column company_imagewrap"
-              ><img
-                src="{% static 'images/home.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a href="https://mathpresso.com/ko" class="column company_imagewrap"
-              ><img
-                src="{% static 'images/mathpresso.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
+            <a href="https://snowcorp.com/ko_KR/" class="column company_imagewrap"><img src="{% static 'images/snow.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://qanda.ai/ko" class="column company_imagewrap"><img src="{% static 'images/qanda.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://ziptoss.com/" class="column company_imagewrap"><img src="{% static 'images/home.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://mathpresso.com/ko" class="column company_imagewrap"><img src="{% static 'images/mathpresso.svg' %}" class="company_image" alt="company_logo" /></a>
           </div>
           <div class="four column row">
-            <a href="https://naver.com" class="column company_imagewrap"
-              ><img
-                src="{% static 'images/naver.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a
-              href="https://dunamu.com/views/01_main_ko.html"
-              class="column company_imagewrap"
-              ><img
-                src="{% static 'images/dunamu.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a href="https://lawandgood.com/" class="column company_imagewrap"
-              ><img
-                src="{% static 'images/lawgood.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a
-              href="https://www.sktelecom.com/index.html"
-              class="column company_imagewrap"
-              ><img
-                src="{% static 'images/skt.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
+            <a href="https://naver.com" class="column company_imagewrap"><img src="{% static 'images/naver.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://dunamu.com/views/01_main_ko.html" class="column company_imagewrap"><img src="{% static 'images/dunamu.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://lawandgood.com/" class="column company_imagewrap"><img src="{% static 'images/lawgood.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://www.sktelecom.com/index.html" class="column company_imagewrap"><img src="{% static 'images/skt.svg' %}" class="company_image" alt="company_logo" /></a>
           </div>
           <div class="four column row">
-            <a href="https://coupang.com" class="column company_imagewrap"
-              ><img
-                src="{% static 'images/coupang.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a href="https://dailyshot.co/" class="column company_imagewrap"
-              ><img
-                src="{% static 'images/dailyshot.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a
-              href="https://tv.naver.com/playlist/home"
-              class="column company_imagewrap"
-              ><img
-                src="{% static 'images/playlist.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
-            <a
-              href="https://www.honestfund.kr/"
-              class="column company_imagewrap"
-              ><img
-                src="{% static 'images/honestfund.svg' %}"
-                class="company_image"
-                alt="company_logo"
-            /></a>
+            <a href="https://coupang.com" class="column company_imagewrap"><img src="{% static 'images/coupang.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://dailyshot.co/" class="column company_imagewrap"><img src="{% static 'images/dailyshot.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://tv.naver.com/playlist/home" class="column company_imagewrap"><img src="{% static 'images/playlist.svg' %}" class="company_image" alt="company_logo" /></a>
+            <a href="https://www.honestfund.kr/" class="column company_imagewrap"><img src="{% static 'images/honestfund.svg' %}" class="company_image" alt="company_logo" /></a>
           </div>
         </div>
       </div>
@@ -219,20 +164,20 @@
 <div class="main_interview">
   <div class="main_container">
     <div class="interview_wrap">
-      <div class="banner_title"> REVIEW </div>
+      <div class="banner_title">REVIEW</div>
       <div class="interview_images">
         {% for i in interviews %}
-          <div class="interview_imagewrap">
-            <img src="{{ i.interview.image.url }}" class="interview_item" alt="">
-            <div class="caption">
-              <div class="blur"></div>
-              <div class="caption_text">
-                <h1> {{ i.interview.generation }}기 {{ i.interview.name }} </h1>
-                <p> {{ i.interview.intro }} </p>
-              </div>
+        <div class="interview_imagewrap">
+          <img src="{{ i.interview.image.url }}" class="interview_item" alt="" />
+          <div class="caption">
+            <div class="blur"></div>
+            <div class="caption_text">
+              <h1>{{ i.interview.generation }}기 {{ i.interview.name }}</h1>
+              <p>{{ i.interview.intro }}</p>
             </div>
           </div>
-        {% endfor %}  
+        </div>
+        {% endfor %}
       </div>
       <a class="more_btn" href="{% url 'interview:non_major_interview' %}"> view more </a>
     </div>
